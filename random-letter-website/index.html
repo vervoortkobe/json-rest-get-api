@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Random Letter Website | Using a JSON/REST GET Api</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Random Letter Website | Using a JSON/REST GET Api">
+    <meta name="keywords" content="random letter website, letter, random letter, json rest get api, json api, rest api, get api">
+    
+    <link rel="stylesheet" href="/style.css">
+    
+    <script src="/script.js" defer></script>
+  </head>
+  
+  <script>
+    fetch('https://json-rest-get-api.glitch.me/api/letter')
+    .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    alert(`${data.letter}`);
+  })
+  .catch(function (err) {
+    console.log(err);
+      
+    if(!data.letter) return alert("ERROR 409: Error while fetching a letter with ${data.letter}")
+  });
+  </script>
+  
+  <body>
+    <center>
+      <h1>
+        Here is a random letter of the alphabet:
+      </h1>
+      <br>
+      <br>
+      <a href="https://random-letter-website.glitch.me">
+        <button type="button" class="btn btn-indigo btn-lg" style="float:right">
+          GENERATE A NEW LETTER
+        </button>
+      </a>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    
+      
+      The JSON/REST GET Api I use:<br>
+      <a href="https://json-rest-get-api.glitch.me">
+      https://json-rest-get-api.glitch.me
+      </a>
+    </center>
+  </body>
+</html>
